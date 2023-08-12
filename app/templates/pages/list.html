@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Todos {% endblock title %}
+{% block content %}
+<div>
+  <h1>Todos:</h1>
+  {% for tweet in tweets %}
+  <div class="h3"> 
+    <a href="{% url 'tweets_detail' tweet.id %}">{{tweet.text}}</a>
+  </div>
+  {% endfor %}
+  <div><a href="create/">Create</a></div>
+</div>
+{% endblock content %}
+ 
